@@ -15,11 +15,11 @@ function AgentDetailPage() {
     const fetchAgentAndReviews = async () => {
       try {
         // Fetch Agent Details
-        const agentRes = await axios.get(`http://localhost:5000/api/agents/${id}`);
+        const agentRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/agents/${id}`);
         setAgent(agentRes.data);
 
         // Fetch Reviews for this agent
-        const reviewsRes = await axios.get(`http://localhost:5000/api/reviews/agent/${id}`);
+        const reviewsRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/agent/${id}`);
         setReviews(reviewsRes.data);
 
         setLoading(false);
