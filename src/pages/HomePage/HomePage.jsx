@@ -16,11 +16,11 @@ function HomePage() {
     const fetchData = async () => {
       try {
         // Fetch Properties
-        const propertiesRes = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/properties');
+        const propertiesRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/properties`);
         setProperties(propertiesRes.data);
 
         // Fetch Agents
-        const agentsRes = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/agents');
+        const agentsRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/agents`);
         setAgents(agentsRes.data);
 
         setLoading(false);

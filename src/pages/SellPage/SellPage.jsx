@@ -68,7 +68,7 @@ function SellPage() {
 
     try {
       // Send data to the new seller inquiries endpoint
-      const response = await axios.post('${import.meta.env.VITE_API_BASE_URL}/api/seller-inquiries', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/seller-inquiries`, formData);
 
       setFormStatus('success');
       setFormMessage('Thank you! Your property details have been submitted. An agent will contact you shortly.');
