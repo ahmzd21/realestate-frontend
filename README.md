@@ -23,24 +23,6 @@ You can view the live application here: `[Your Deployed Frontend URL Here]`
 * **React Router DOM:** For client-side routing within the application.
 * **CSS:** For styling and layout.
 
-## 📦 Project Structure
-.
-├── public/                  # Public assets
-├── src/
-│   ├── assets/              # Static assets like images, icons
-│   ├── components/          # Reusable UI components (e.g., PropertyCard, PropertyFilter)
-│   ├── pages/               # Main application pages (e.g., BuyPage, PropertyDetailPage)
-│   ├── App.jsx              # Main application component
-│   ├── main.jsx             # Entry point for React application
-│   └── index.css            # Global styles
-├── .env.development         # Environment variables for development (local backend URL)
-├── .env.production          # Environment variables for production (deployed backend URL)
-├── .gitignore               # Specifies intentionally untracked files to ignore
-├── index.html               # Main HTML file
-├── package.json             # Project metadata and dependencies
-└── vite.config.js           # Vite configuration
-
-
 ## ⚙️ Getting Started (Local Development)
 
 To run this frontend locally on your machine, follow these steps:
