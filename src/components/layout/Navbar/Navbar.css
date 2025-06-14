@@ -1,0 +1,110 @@
+/* src/components/layout/Navbar/Navbar.css */
+
+.navbar {
+  background-color: #020403; /* White background */
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  position: sticky; /* Makes the navbar stick to the top when scrolling */
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex; /* Use Flexbox for alignment */
+  justify-content: space-between; /* Space out logo, links, and actions */
+  align-items: center; /* Vertically center items */
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Horizontal padding */
+}
+
+.navbar-logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #007bff; /* Primary brand color */
+  text-decoration: none; /* Remove underline from link */
+}
+
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Flex items for horizontal layout */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px; /* Space between links */
+}
+
+/* This is your original, correct styling for non-active links */
+.nav-links a {
+  color: white; /* Dark gray text - THIS IS WHAT YOU WANT FOR NON-ACTIVE */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-links a:hover {
+  color: #007bff; /* Highlight on hover */
+}
+
+/* --- Styles for the active (current) page link --- */
+/* This targets the NavLink's <a> tag when it has the 'active-nav-link' class */
+.nav-links a.active-nav-link {
+  color: #007bff; /* Primary brand blue - THIS IS WHAT YOU WANT FOR ACTIVE */
+  text-decoration: underline; /* Underline the active link */
+  font-weight: bold; /* Make it bold for more emphasis */
+}
+
+/* Optionally, keep the blue color on hover for active link */
+.nav-links a.active-nav-link:hover {
+  color: #007bff; /* Keep the same blue on hover */
+  text-decoration: underline; /* Keep underlined */
+}
+
+/* --- Your existing Navbar Actions buttons --- */
+.navbar-actions .nav-button {
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: 10px; /* Space between buttons */
+  transition: background-color 0.3s ease;
+  border: 1px solid transparent; /* For consistent size on hover */
+}
+
+.navbar-actions .nav-button.login {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.navbar-actions .nav-button.login:hover {
+    background-color: #e6f2ff; /* Light blue on hover */
+}
+
+.navbar-actions .nav-button.signup:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Basic Responsiveness (Hamburger menu not implemented yet, but good to think about) */
+@media (max-width: 768px) {
+  .nav-links,
+  .navbar-actions {
+    display: none; /* Hide links and actions on small screens for now */
+    /* You would typically implement a hamburger menu toggle here */
+  }
+
+  .navbar-container {
+    justify-content: center; /* Center logo if other elements are hidden */
+  }
+
+  .navbar-logo {
+    font-size: 1.5em;
+  }
+}

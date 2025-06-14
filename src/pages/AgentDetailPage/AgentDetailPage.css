@@ -1,0 +1,270 @@
+/* src/pages/AgentDetailPage/AgentDetailPage.css */
+
+.agent-detail-page {
+  padding: 40px 0;
+  background-color: #f0f2f5;
+}
+
+.agent-detail-page .container {
+  max-width: 1000px; /* Consistent container width with property detail */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.agent-profile-header {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.agent-profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border: 5px solid #007bff; /* Accent border */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); /* Subtle glow */
+}
+
+.agent-header-info h1 {
+  font-size: 3em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.agent-title {
+  font-size: 1.2em;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.agent-tagline {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agent-contact-info p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.agent-contact-info a {
+  color: #007bff;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+}
+
+.agent-contact-info a:hover {
+  text-decoration: underline;
+}
+
+.agent-social-links {
+  margin-top: 15px;
+}
+
+.agent-social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #007bff;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.agent-social-links a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.agent-details-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.details-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.details-card h3 {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.agent-bio {
+  line-height: 1.7;
+  color: #444;
+  font-size: 1.05em;
+}
+
+.areas-served-list {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Display horizontally */
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.areas-served-list li {
+  background-color: #e6f2ff;
+  padding: 8px 15px;
+  border-radius: 20px; /* Pill shape */
+  color: #0056b3;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.reviews-list .review-item {
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.reviews-list .review-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.reviews-list .review-item h4 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.reviews-list .review-item p {
+  font-style: italic;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.agent-listings-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.agent-listings-section h3 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.no-listings {
+  font-size: 1.2em;
+  color: #666;
+  padding: 30px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Reuse property-listing-grid from BuyPage.css, or define here if not globally imported */
+.property-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.back-to-agents {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Reusing .button-secondary from PropertyDetailPage.css or define here */
+.button-secondary {
+  display: inline-block;
+  background-color: #6c757d;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+  .agent-profile-header {
+    flex-direction: row; /* Side-by-side on larger screens */
+    text-align: left;
+    gap: 40px;
+    align-items: flex-start; /* Align header content to top */
+  }
+  .agent-profile-photo {
+    margin-bottom: 0;
+    flex-shrink: 0; /* Prevent photo from shrinking */
+  }
+  .agent-header-info {
+    flex-grow: 1;
+  }
+  .agent-header-info h1,
+  .agent-header-info .agent-title,
+  .agent-header-info .agent-tagline,
+  .agent-contact-info,
+  .agent-social-links {
+    text-align: left; /* Align text to left in header */
+  }
+  .agent-social-links a {
+      margin-left: 0;
+      margin-right: 15px;
+  }
+  .areas-served-list {
+      justify-content: flex-start; /* Align areas to left */
+  }
+  .reviews-list .review-item {
+      text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .agent-profile-header {
+    padding: 20px;
+  }
+  .agent-profile-photo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+  .agent-header-info h1 {
+    font-size: 2.5em;
+  }
+  .agent-title {
+    font-size: 1.1em;
+  }
+  .agent-listings-section h3 {
+    font-size: 2em;
+  }
+  .property-listing-grid {
+    grid-template-columns: 1fr; /* Stack on very small screens */
+    padding: 0 10px;
+  }
+}

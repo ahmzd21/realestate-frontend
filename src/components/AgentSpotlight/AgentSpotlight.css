@@ -1,0 +1,110 @@
+/* src/components/AgentSpotlight/AgentSpotlight.css */
+.agent-spotlight {
+  padding: 60px 0;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.agent-spotlight h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.agent-spotlight h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #007bff; /* Example accent color */
+  border-radius: 2px;
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agent-card {
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.agent-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #007bff; /* Accent border */
+}
+
+.agent-card h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.agent-title {
+  font-size: 1.1em;
+  color: #007bff; /* Accent color */
+  margin-bottom: 10px;
+}
+
+.agent-tagline {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.btn-view-profile {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view-profile:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .agent-spotlight {
+    padding: 40px 0;
+  }
+  .agent-spotlight h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .agent-grid {
+    padding: 0 15px;
+  }
+}

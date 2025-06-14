@@ -1,0 +1,101 @@
+/* src/pages/HomePage/HomePage.css */
+
+/* Basic container for consistent content width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* General section styling */
+.section-featured-properties,
+.section-explore-areas,
+.section-testimonials {
+  padding: 60px 0; /* Vertical padding for sections */
+  text-align: center;
+}
+
+.section-featured-properties {
+    background-color: #f9f9f9; /* Light background for this section */
+}
+
+.section-featured-properties h2,
+.section-explore-areas h2,
+.section-testimonials h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.section-description {
+  font-size: 1.1em;
+  color: #666666;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Property Grid Styling */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between cards */
+  margin-bottom: 40px;
+}
+
+/* View All Properties Button */
+.view-all-button {
+  margin-top: 40px;
+}
+
+.button-primary {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-featured-properties,
+  .section-explore-areas,
+  .section-testimonials {
+    padding: 40px 0;
+  }
+
+  .section-featured-properties h2,
+  .section-explore-areas h2,
+  .section-testimonials h2 {
+    font-size: 2em;
+  }
+
+  .section-description {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+
+  .property-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-grid {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+    padding: 0 15px; /* Add some horizontal padding to the grid itself */
+  }
+  .container {
+    padding: 0 15px; /* Adjust container padding */
+  }
+}

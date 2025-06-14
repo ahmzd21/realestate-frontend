@@ -1,0 +1,43 @@
+/* src/index.css */
+
+/* Basic Box-sizing for consistent layouts */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic body styles - you might have these already */
+body {
+  font-family: 'Arial', sans-serif; /* Or your preferred font-family */
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f8f8; /* A very light general background */
+}
+
+/* Make images responsive by default */
+img {
+  max-width: 100%; /* Ensures images don't overflow their containers */
+  height: auto;    /* Maintains aspect ratio */
+  display: block;  /* Removes extra space below images */
+}
+
+/* General link styling - you might have this in Navbar.css too, but good as a fallback */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* General utility class for containers - ensures consistent content width */
+.container {
+    max-width: 1200px; /* Or 1000px, depending on your preferred main content width */
+    margin: 0 auto;
+    padding: 0 20px; /* Default horizontal padding */
+}
+
+/* You can add more global responsive base styles here as needed */

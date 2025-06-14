@@ -1,0 +1,87 @@
+/* src/components/HowItWorks/HowItWorks.css */
+.how-it-works {
+  padding: 60px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.how-it-works h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #007bff; /* Example accent color */
+  border-radius: 2px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  flex: 1;
+  min-width: 280px; /* Minimum width for each card */
+  max-width: 350px;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.step-icon {
+  font-size: 3em; /* Adjust icon size */
+  color: #007bff; /* Icon color */
+  margin-bottom: 15px;
+}
+
+.step-card h3 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.step-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 40px 0;
+  }
+  .how-it-works h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .steps-container {
+    padding: 0 15px;
+  }
+  .step-card {
+    max-width: 100%; /* Full width on very small screens */
+  }
+}

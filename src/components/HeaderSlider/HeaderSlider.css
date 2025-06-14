@@ -1,0 +1,121 @@
+/* src/components/layout/HeaderSlider/HeaderSlider.css */
+
+.header-slider {
+  width: 100%;
+  margin-bottom: 40px; /* Space below the slider */
+}
+
+.slick-slider {
+  position: relative; /* Needed for positioning dots/arrows if you add them */
+}
+
+.slider-slide {
+  position: relative;
+  height: 500px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area */
+  object-position: center; /* Centers the image content */
+  filter: brightness(0.7); /* Slightly darken the image for text readability */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+  z-index: 1; /* Ensure overlay is above image but below content */
+}
+
+.slider-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center content precisely */
+  z-index: 2; /* Content above overlay */
+  color: #ffffff; /* White text */
+  text-align: center;
+  width: 80%; /* Limit content width */
+  max-width: 800px;
+}
+
+.slider-content h2 {
+  font-size: 3em;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.slider-content p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.slider-button {
+  display: inline-block;
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Customizing slick dots (navigation indicators) */
+.slick-dots {
+  bottom: 25px; /* Position dots slightly higher */
+}
+
+.slick-dots li button:before {
+  font-size: 12px; /* Size of the dots */
+  color: #ffffff; /* Color of inactive dots */
+  opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #007bff; /* Color of active dot */
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slider-slide {
+    height: 400px; /* Shorter height on mobile */
+  }
+
+  .slider-content h2 {
+    font-size: 2em;
+  }
+
+  .slider-content p {
+    font-size: 1em;
+  }
+
+  .slider-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-slide {
+    height: 300px;
+  }
+  .slider-content h2 {
+    font-size: 1.5em;
+  }
+  .slider-content p {
+    font-size: 0.9em;
+  }
+}

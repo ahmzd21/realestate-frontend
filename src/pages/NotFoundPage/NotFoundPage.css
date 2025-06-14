@@ -1,0 +1,114 @@
+/* src/pages/NotFoundPage/NotFoundPage.css */
+
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height, 80px) - var(--footer-height, 100px)); /* Adjust based on your Navbar/Footer height if fixed */
+  text-align: center;
+  background-color: #f0f2f5;
+  padding: 40px 0;
+}
+
+.not-found-page .container {
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-page h1 {
+  font-size: 8em;
+  color: #dc3545; /* A strong, warning-like color */
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.not-found-page h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.not-found-page p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.not-found-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Reusing button styles from other pages for consistency */
+.button-primary {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #0056b3;
+}
+
+.button-secondary {
+    display: inline-block;
+    background-color: #6c757d;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .not-found-page h1 {
+    font-size: 6em;
+  }
+  .not-found-page h2 {
+    font-size: 2em;
+  }
+  .not-found-page p {
+    font-size: 1em;
+  }
+  .not-found-page .container {
+    padding: 30px;
+  }
+  .not-found-links {
+    flex-direction: column; /* Stack buttons on smaller screens */
+    gap: 15px;
+  }
+  .button-primary, .button-secondary {
+    width: 80%; /* Make buttons wider */
+    margin: 0 auto; /* Center buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found-page h1 {
+    font-size: 5em;
+  }
+  .not-found-page h2 {
+    font-size: 1.8em;
+  }
+  .not-found-page .container {
+    padding: 20px;
+  }
+}
