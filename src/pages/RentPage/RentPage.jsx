@@ -24,7 +24,7 @@ function RentPage() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/properties');
+        const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/properties');
         setProperties(response.data);
         setLoading(false);
       } catch (err) {

@@ -17,7 +17,7 @@ function AgentsPage() {
   useEffect(() => {
     const fetchAgents = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/agents');
+        const response = await axios.get('${import.meta.env.VITE_API_BASE_URL}/api/agents');
         setAgents(response.data); // Set all agents from API
         setLoading(false);
       } catch (err) {
