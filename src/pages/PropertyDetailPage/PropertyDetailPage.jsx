@@ -16,17 +16,17 @@ function PropertyDetailPage() {
     const fetchPropertyAndAgent = async () => {
       try {
         // Fetch Property Details
-        const propertyRes = await axios.get(`http://localhost:5000/api/properties/${id}`);
+        const propertyRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/properties/${id}`);
         setProperty(propertyRes.data);
 
         // Fetch Agent Details (based on agentId from the property)
         if (propertyRes.data && propertyRes.data.agentId) {
-          const agentRes = await axios.get(`http://localhost:5000/api/agents/${propertyRes.data.agentId}`);
+          const agentRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/agents/${propertyRes.data.agentId}`);
           setAgent(agentRes.data);
         }
 
         // Fetch Reviews for this property
-        const reviewsRes = await axios.get(`http://localhost:5000/api/reviews/property/${id}`);
+        const reviewsRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/reviews/property/${id}`);
         setReviews(reviewsRes.data);
 
 
