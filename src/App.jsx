@@ -10,7 +10,9 @@ import AgentsPage from './pages/AgentsPage/AgentsPage';
 import AgentDetailPage from './pages/AgentDetailPage/AgentDetailPage';
 import PropertyDetailPage from './pages/PropertyDetailPage/PropertyDetailPage';
 import ContactPage from './pages/ContactPage/ContactPage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage'; 
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import LoginPage from './pages/AuthPages/LoginPage'; // <--- IMPORT LOGIN PAGE
+import SignupPage from './pages/AuthPages/SignupPage'; // <--- IMPORT SIGNUP PAGE 
 
 // Import layout components (we'll create these in the next steps)
 import Navbar from './components/layout/Navbar/Navbar';
@@ -33,6 +35,8 @@ function App() {
           <Route path="/properties/:id" element={<PropertyDetailPage />} /> {/* Dynamic property ID */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />  {/* This route catches any undefined paths and displays the NotFoundPage */}
+          <Route path="/login" element={<LoginPage />} />   {/* <--- ADD THIS ROUTE */}
+          <Route path="/signup" element={<SignupPage />} /> {/* <--- ADD THIS ROUTE */}
         </Routes>
       </main>
 

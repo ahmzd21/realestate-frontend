@@ -1,84 +1,73 @@
-// src/components/Navbar/Navbar.jsx
+// client/src/components/layout/Navbar/Navbar.jsx
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // Keep NavLink
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
 import './Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login'); // Redirect to login page after logout
+  };
+
   return (
     <nav className="navbar">
-      <div className="navbar-container"> {/* Use navbar-container as per your CSS */}
-        <NavLink to="/" className="navbar-logo"> {/* Logo usually doesn't have active state */}
-          RealEstate
-        </NavLink>
-        <ul className="nav-links">
-          <li>
-            <NavLink
-              to="/"
-              // If isActive, add 'active-nav-link', otherwise just use default 'a' styles
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/buy"
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              Buy
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/rent"
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              Rent
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/sell"
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              Sell
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/agents"
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              Agents
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              Contact
-            </NavLink>
-          </li>
-          {/* List Property link is commented out as per previous discussion, if it's internal */}
-          {/* <li>
-            <NavLink
-              to="/list-property"
-              className={({ isActive }) => (isActive ? 'active-nav-link' : '')}
-            >
-              List Property
-            </NavLink>
-          </li> */}
-        </ul>
-        {/* Assuming you have navbar-actions for Login/Signup buttons */}
-        <div className="navbar-actions">
-            {/* Your Login/Signup buttons typically go here */}
-            {/* <a href="/login" className="nav-button login">Login</a>
-            <a href="/signup" className="nav-button signup">Sign Up</a> */}
+      <div className="navbar-container">
+        {/* Left Section: Logo */}
+        <div className="navbar-left">
+          <Link to="/" className="navbar-logo">
+            RealEstate
+          </Link>
         </div>
+
+        {/* Center Section: Main Navigation Links */}
+        <ul className="nav-links-main"> {/* <--- NEW CLASS FOR MAIN LINKS */}
+          <li className="nav-item">
+            <Link to="/" className="nav-link">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/buy" className="nav-link">Buy</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/rent" className="nav-link">Rent</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/sell" className="nav-link">Sell</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/agents" className="nav-link">Agents</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contact" className="nav-link">Contact</Link>
+          </li>
+        </ul>
+
+        {/* Right Section: Auth Links */}
+        <ul className="nav-links-auth"> {/* <--- NEW CLASS FOR AUTH LINKS */}
+          {user ? (
+            // If logged in, show Logout link
+            <li className="nav-item">
+              {/* Using Link for logout to keep consistent styling, but it will execute JS onClick */}
+              <Link to="#" onClick={handleLogout} className="nav-link">Logout</Link>
+            </li>
+          ) : (
+            // If not logged in, show Login and Sign Up links
+            <>
+              <li className="nav-item">
+                <Link to="/login" className="nav-link">Login</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/signup" className="nav-link">Sign Up</Link>
+              </li>
+            </>
+          )}
+        </ul>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
