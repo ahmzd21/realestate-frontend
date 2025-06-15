@@ -80,17 +80,13 @@ function PropertyDetailPage() {
         </div>
       </div>
 
-      {agent && (
-        <div className="agent-info-section">
-          <h3>Contact Agent:</h3>
-          <div className="agent-card-detail">
-            <img src={agent.photo || 'https://via.placeholder.com/100'} alt={agent.name} className="agent-detail-photo" />
-            <h4>{agent.name}</h4>
-            <p>{agent.title}</p>
-            <p>Email: <a href={`mailto:${agent.contact.email}`}>{agent.contact.email}</a></p>
-            <p>Phone: {agent.contact.phone}</p>
-            {/* Add more agent details if needed */}
-          </div>
+      {agent && ( // Ensure agent object exists before trying to access its properties
+        <div className="agent-details">
+          <h3>Contact Agent</h3>
+          <p><strong>Name:</strong> {agent.name}</p>
+          <p><strong>Email:</strong> {agent.email}</p>
+          <p><strong>Phone:</strong> {agent.phone}</p> {/* Assuming 'phone' field in Agent model */}
+          {/* You can add more agent details here like bio, picture etc. */}
         </div>
       )}
 
